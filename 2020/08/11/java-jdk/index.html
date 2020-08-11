@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Nmap, Hexo">
+    <meta name="keywords" content="java_jdk, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Nmap | Hexo</title>
+    <title>java_jdk | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Nmap</h1>
+                    <h1 class="description center-align post-title">java_jdk</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-08
+                    2020-08-11
                 </div>
                 
 
@@ -458,7 +458,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="如何在centos中下载：java-jdk版"><a href="#如何在centos中下载：java-jdk版" class="headerlink" title="如何在centos中下载：java_jdk版"></a>如何在centos中下载：java_jdk版</h1><p><em>话不多说直接上操作</em></p>
+<h4 id="我们先ssh连接centos，并且利用管道符看本机是否安装过java。"><a href="#我们先ssh连接centos，并且利用管道符看本机是否安装过java。" class="headerlink" title="我们先ssh连接centos，并且利用管道符看本机是否安装过java。"></a>我们先ssh连接centos，并且利用管道符看本机是否安装过java。</h4><img src="https://s1.ax1x.com/2020/08/11/aOvX2q.png" style="zoom:150%;">
+
+<h4 id="我们直接把本机上的java进行删除了。"><a href="#我们直接把本机上的java进行删除了。" class="headerlink" title="我们直接把本机上的java进行删除了。"></a>我们直接把本机上的java进行删除了。</h4><img src="https://s1.ax1x.com/2020/08/11/aOx0ij.png" style="zoom:150%;">
+
+
+
+<h4 id="在yum-库中搜索我们想要下载的java版本。"><a href="#在yum-库中搜索我们想要下载的java版本。" class="headerlink" title="在yum 库中搜索我们想要下载的java版本。"></a>在yum 库中搜索我们想要下载的java版本。</h4><img src="https://s1.ax1x.com/2020/08/11/aOznlq.png" style="zoom:150%;">
+
+<h4 id="直接使用yum-进行下载jdk版的java。"><a href="#直接使用yum-进行下载jdk版的java。" class="headerlink" title="直接使用yum 进行下载jdk版的java。"></a>直接使用yum 进行下载jdk版的java。</h4><img src="https://s1.ax1x.com/2020/08/11/aOzIAg.png" style="zoom:150%;">
+
+<h4 id="安装完后，默认的安装目录是-usr-lib-jvm-java-1-8-0-openjdk-1-8-0-262-b10-0-el7-8-x86-64。"><a href="#安装完后，默认的安装目录是-usr-lib-jvm-java-1-8-0-openjdk-1-8-0-262-b10-0-el7-8-x86-64。" class="headerlink" title="安装完后，默认的安装目录是:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64。"></a>安装完后，默认的安装目录是:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64。</h4><img src="https://s1.ax1x.com/2020/08/11/aXSP3R.png" style="zoom:150%;">
+
+
+
+<h4 id="在-etc-profile文件中配置JAVA相关的环境变量，在结尾添加以下内容。"><a href="#在-etc-profile文件中配置JAVA相关的环境变量，在结尾添加以下内容。" class="headerlink" title="在/etc/profile文件中配置JAVA相关的环境变量，在结尾添加以下内容。"></a>在/etc/profile文件中配置JAVA相关的环境变量，在结尾添加以下内容。</h4><img src="https://s1.ax1x.com/2020/08/11/aXS0vq.png" style="zoom:150%;">
+
+<h4 id="让修改的变量生效，查看java版本号。"><a href="#让修改的变量生效，查看java版本号。" class="headerlink" title="让修改的变量生效，查看java版本号。"></a>让修改的变量生效，查看java版本号。</h4><img src="https://s1.ax1x.com/2020/08/11/aXSRPJ.png" style="zoom:150%;">
+
+<p>整个过程就是这么简单粗暴。</p>
+
             </div>
             <hr/>
 
@@ -483,7 +503,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KiLeter.github.io/Nmap/Nmap.html">https://KiLeter.github.io/Nmap/Nmap.html</a>
+                    <a href="https://KiLeter.github.io/2020/08/11/java-jdk/">https://KiLeter.github.io/2020/08/11/java-jdk/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -691,24 +711,33 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/Nmap/Nmap.html">
+                <a href="/2020/08/11/java-jdk/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Nmap">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="java_jdk">
                         
-                        <span class="card-title">Nmap</span>
+                        <span class="card-title">java_jdk</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            如何在centos中下载：java_jdk版话不多说直接上操作
+我们先ssh连接centos，并且利用管道符看本机是否安装过java。
+
+我们直接把本机上的java进行删除了。
+
+
+
+在yum 库中搜索我们想要下载的java版本。
+
+直接使
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-11
                             </span>
                         <span class="publish-author">
                             
@@ -726,22 +755,23 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Nmap/Nmap.html">
+                <a href="/2020/08/08/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Nmap">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="“Metasploit”">
                         
-                        <span class="card-title">Nmap</span>
+                        <span class="card-title">“Metasploit”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Metasploit基础教程（1）前期渗透——–如何使用msf来渗透一台电脑（这台电脑没有装任何杀毒软件）
+利用msf模块中的msfvenom模块，首先生成.exe木马文件，用靶机打开，攻击成功后，就渗透到了靶机系统中。我们要准备两台虚拟机
                         
                     </div>
                     <div class="publish-info">
@@ -756,7 +786,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
