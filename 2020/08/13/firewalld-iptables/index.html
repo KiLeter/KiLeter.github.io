@@ -458,7 +458,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="firewall常用参数"><a href="#firewall常用参数" class="headerlink" title="firewall常用参数"></a>firewall常用参数</h1><h3 id="root-centos7-firewall-cmd-–zone-public-–add-port-80-tcp-–permanent"><a href="#root-centos7-firewall-cmd-–zone-public-–add-port-80-tcp-–permanent" class="headerlink" title="[root@centos7 ~]# firewall-cmd –zone=public –add-port=80/tcp –permanent"></a>[root@centos7 ~]# firewall-cmd –zone=public –add-port=80/tcp –permanent</h3><p>查询端口号80 是否开启：</p>
+<h3 id="root-centos7-firewall-cmd-–query-port-80-tcp"><a href="#root-centos7-firewall-cmd-–query-port-80-tcp" class="headerlink" title="[root@centos7 ~]# firewall-cmd –query-port=80/tcp"></a>[root@centos7 ~]# firewall-cmd –query-port=80/tcp</h3><p>重启防火墙：</p>
+<h3 id="root-centos7-firewall-cmd-–reload"><a href="#root-centos7-firewall-cmd-–reload" class="headerlink" title="[root@centos7 ~]# firewall-cmd –reload"></a>[root@centos7 ~]# firewall-cmd –reload</h3><p>查询有哪些端口是开启的:</p>
+<h3 id="root-centos7-firewall-cmd-–list-port"><a href="#root-centos7-firewall-cmd-–list-port" class="headerlink" title="[root@centos7 ~]# firewall-cmd –list-port"></a>[root@centos7 ~]# firewall-cmd –list-port</h3><p>命令含义：</p>
+<p>–zone #作用域<br>–add-port=80/tcp #添加端口，格式为：端口/通讯协议<br>–permanent #永久生效，没有此参数重启后失效</p>
+<p>关闭firewall：</p>
+<h3 id="systemctl-stop-firewalld-service-停止firewall"><a href="#systemctl-stop-firewalld-service-停止firewall" class="headerlink" title="systemctl stop firewalld.service #停止firewall"></a>systemctl stop firewalld.service #停止firewall</h3><h3 id="systemctl-disable-firewalld-service-禁止firewall开机启动"><a href="#systemctl-disable-firewalld-service-禁止firewall开机启动" class="headerlink" title="systemctl disable firewalld.service #禁止firewall开机启动"></a>systemctl disable firewalld.service #禁止firewall开机启动</h3><h1 id="iptables常用参数"><a href="#iptables常用参数" class="headerlink" title="iptables常用参数"></a>iptables常用参数</h1><h3 id="禁止192-168-1-3-IP地址的所有类型数据接入"><a href="#禁止192-168-1-3-IP地址的所有类型数据接入" class="headerlink" title="禁止192.168.1.3 IP地址的所有类型数据接入"></a>禁止192.168.1.3 IP地址的所有类型数据接入</h3><p>iptables -A INPUT ! -s 192.168.1.3 -j DROP</p>
+<h3 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h3><p>iptables -A INPUT -p tcp –dport 80 -j ACCEPT #开放80端口</p>
+<h3 id="开放端口范围"><a href="#开放端口范围" class="headerlink" title="开放端口范围"></a>开放端口范围</h3><p>iptables -I INPUT -p tcp –dport 22:80 -j ACCEPT #开发22-80范围的端口</p>
+<h3 id="不允许80端口流出"><a href="#不允许80端口流出" class="headerlink" title="不允许80端口流出"></a>不允许80端口流出</h3><p>iptables -I OUTPUT -p tcp –dport 80 -j DROP</p>
+<h3 id="允许ping"><a href="#允许ping" class="headerlink" title="允许ping"></a>允许ping</h3><p>   iptables -A INPUT -p icmp –icmp-type 8 -j ACCEPT</p>
+<h3 id="所有出站一律绿灯"><a href="#所有出站一律绿灯" class="headerlink" title="所有出站一律绿灯"></a>所有出站一律绿灯</h3><p>   iptables -P OUTPUT ACCEPT</p>
+<h3 id="要解封一个IP，使用下面这条命令"><a href="#要解封一个IP，使用下面这条命令" class="headerlink" title="要解封一个IP，使用下面这条命令:"></a>要解封一个IP，使用下面这条命令:</h3><p>   iptables -D INPUT -s (ip地址)-j DROP</p>
+<h3 id="要封停一个IP，使用下面这条命令："><a href="#要封停一个IP，使用下面这条命令：" class="headerlink" title="要封停一个IP，使用下面这条命令："></a>要封停一个IP，使用下面这条命令：</h3><p>   iptables -I INPUT -s （IP地址）-j DROP</p>
+
             </div>
             <hr/>
 

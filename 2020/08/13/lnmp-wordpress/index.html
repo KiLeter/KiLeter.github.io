@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ssh, Hexo">
+    <meta name="keywords" content="lnmp&amp;wordpress, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ssh | Hexo</title>
+    <title>lnmp&amp;wordpress | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ssh</h1>
+                    <h1 class="description center-align post-title">lnmp&amp;wordpress</h1>
                 </div>
             </div>
         </div>
@@ -458,11 +458,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="操作系统的root账户拥有系统全部权限，如果允许使用root账户进行远程连接，一旦黑客利用该账户进行暴力破解成功，后果将不堪设想，因此，出于安全性的考虑，平台后台操作系统要禁止使用root账户远程连接。另外，由于22端口是公开的大家都知道的默认远程连接端口，也存在一定的安全性问题，所以还需要把默认的22端口改为其它自定义的端口，以达到安全的目的。"><a href="#操作系统的root账户拥有系统全部权限，如果允许使用root账户进行远程连接，一旦黑客利用该账户进行暴力破解成功，后果将不堪设想，因此，出于安全性的考虑，平台后台操作系统要禁止使用root账户远程连接。另外，由于22端口是公开的大家都知道的默认远程连接端口，也存在一定的安全性问题，所以还需要把默认的22端口改为其它自定义的端口，以达到安全的目的。" class="headerlink" title="操作系统的root账户拥有系统全部权限，如果允许使用root账户进行远程连接，一旦黑客利用该账户进行暴力破解成功，后果将不堪设想，因此，出于安全性的考虑，平台后台操作系统要禁止使用root账户远程连接。另外，由于22端口是公开的大家都知道的默认远程连接端口，也存在一定的安全性问题，所以还需要把默认的22端口改为其它自定义的端口，以达到安全的目的。"></a><em>操作系统的root账户拥有系统全部权限，如果允许使用root账户进行远程连接，一旦黑客利用该账户进行暴力破解成功，后果将不堪设想，因此，出于安全性的考虑，平台后台操作系统要禁止使用root账户远程连接。另外，由于22端口是公开的大家都知道的默认远程连接端口，也存在一定的安全性问题，所以还需要把默认的22端口改为其它自定义的端口，以达到安全的目的。</em></h5><p>第一我们先创建一个普通用户：</p>
-<p><img src="https://s1.ax1x.com/2020/08/13/dSCVtP.png"></p>
-<p>修改ssh配置文件，并添加一个520的端口将root禁掉。</p>
-<h4 id="root-192-vi-etc-ssh-sshd-config"><a href="#root-192-vi-etc-ssh-sshd-config" class="headerlink" title="[root@192 /]# vi /etc/ssh/sshd_config"></a>[root@192 /]# vi /etc/ssh/sshd_config</h4><p><img src="https://s1.ax1x.com/2020/08/13/dSCKXQ.png"></p>
-<h4 id="用caixunkun登录后，再su切换到root用户执行后续的系统操作（注：caixunkun只是用来登录系统，除了自身的主目录外，对其它的目录和文件没有写和执行的权限，后续操作还是使用root账户）。"><a href="#用caixunkun登录后，再su切换到root用户执行后续的系统操作（注：caixunkun只是用来登录系统，除了自身的主目录外，对其它的目录和文件没有写和执行的权限，后续操作还是使用root账户）。" class="headerlink" title="用caixunkun登录后，再su切换到root用户执行后续的系统操作（注：caixunkun只是用来登录系统，除了自身的主目录外，对其它的目录和文件没有写和执行的权限，后续操作还是使用root账户）。"></a>用caixunkun登录后，再su切换到root用户执行后续的系统操作（注：caixunkun只是用来登录系统，除了自身的主目录外，对其它的目录和文件没有写和执行的权限，后续操作还是使用root账户）。</h4><p><img src="https://s1.ax1x.com/2020/08/13/dSC2cD.png"></p>
+                <h2 id="直接上脚本："><a href="#直接上脚本：" class="headerlink" title="直接上脚本："></a><em>直接上脚本：</em></h2><h4 id="root-192-wget-http-soft-vpser-net-lnmp-lnmp1-7-tar-gz-cO-lnmp1-7-tar-gz-amp-amp-tar-zxf-lnmp1-7-tar-gz-amp-amp-cd-lnmp1-7-amp-amp-install-sh-lnmp"><a href="#root-192-wget-http-soft-vpser-net-lnmp-lnmp1-7-tar-gz-cO-lnmp1-7-tar-gz-amp-amp-tar-zxf-lnmp1-7-tar-gz-amp-amp-cd-lnmp1-7-amp-amp-install-sh-lnmp" class="headerlink" title="[root@192 ~]# wget http://soft.vpser.net/lnmp/lnmp1.7.tar.gz -cO lnmp1.7.tar.gz &amp;&amp; tar zxf lnmp1.7.tar.gz &amp;&amp; cd lnmp1.7 &amp;&amp; ./install.sh lnmp"></a>[root@192 ~]# wget <a target="_blank" rel="noopener" href="http://soft.vpser.net/lnmp/lnmp1.7.tar.gz">http://soft.vpser.net/lnmp/lnmp1.7.tar.gz</a> -cO lnmp1.7.tar.gz &amp;&amp; tar zxf lnmp1.7.tar.gz &amp;&amp; cd lnmp1.7 &amp;&amp; ./install.sh lnmp</h4><p><img src="https://s1.ax1x.com/2020/08/13/dpY8uF.png"></p>
+<h2 id="下载wordpress，解压wordpress包，复制到网站目录上："><a href="#下载wordpress，解压wordpress包，复制到网站目录上：" class="headerlink" title="下载wordpress，解压wordpress包，复制到网站目录上："></a><em>下载wordpress</em>，解压wordpress包，复制到网站目录上：</h2><h4 id="root-192-default-wget-https-cn-wordpress-org-latest-zh-CN-tar-gz"><a href="#root-192-default-wget-https-cn-wordpress-org-latest-zh-CN-tar-gz" class="headerlink" title="[root@192 default]# wget  https://cn.wordpress.org/latest-zh_CN.tar.gz"></a>[root@192 default]# wget  <a target="_blank" rel="noopener" href="https://cn.wordpress.org/latest-zh_CN.tar.gz">https://cn.wordpress.org/latest-zh_CN.tar.gz</a></h4><p><img src="https://s1.ax1x.com/2020/08/13/d9FdBD.png"></p>
+<h4 id="root-192-html-tar-zxvf-latest-zh-CN-tar-gz"><a href="#root-192-html-tar-zxvf-latest-zh-CN-tar-gz" class="headerlink" title="[root@192 html]#tar -zxvf latest-zh CN.tar.gz"></a>[root@192 html]#tar -zxvf latest-zh CN.tar.gz</h4><p><img src="https://s1.ax1x.com/2020/08/13/dptmrD.png"></p>
+<h2 id="给文件夹加到www：www组中"><a href="#给文件夹加到www：www组中" class="headerlink" title="给文件夹加到www：www组中"></a><em>给文件夹加到www：www组中</em></h2><p><em>chown -R www：www wordpress/</em></p>
+<p><em>chmod -R 775 wordpress/</em></p>
+<p>直接启动mysql，创建一个wordpress数据库，并直接刷新权限。</p>
+<p>mysql -u root -p</p>
+<p><img src="https://s1.ax1x.com/2020/08/13/dpT6lq.png"></p>
+<h2 id="创建一个用户为-wpadmin-密码为‘password’，并给权限给访问wordpress数据库的所有权限，包括增删改查。"><a href="#创建一个用户为-wpadmin-密码为‘password’，并给权限给访问wordpress数据库的所有权限，包括增删改查。" class="headerlink" title="创建一个用户为 wpadmin 密码为‘password’，并给权限给访问wordpress数据库的所有权限，包括增删改查。"></a>创建一个用户为 wpadmin 密码为‘password’，并给权限给访问wordpress数据库的所有权限，包括增删改查。</h2><p><img src="https://s1.ax1x.com/2020/08/13/dpTvAe.png"></p>
+<h2 id="直接访问搭建虚拟机的地址"><a href="#直接访问搭建虚拟机的地址" class="headerlink" title="直接访问搭建虚拟机的地址"></a>直接访问搭建虚拟机的地址</h2><p><img src="https://s1.ax1x.com/2020/08/13/dpHUIg.png"></p>
 
             </div>
             <hr/>
@@ -488,7 +493,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KiLeter.github.io/2020/08/13/ssh/">https://KiLeter.github.io/2020/08/13/ssh/</a>
+                    <a href="https://KiLeter.github.io/2020/08/13/lnmp-wordpress/">https://KiLeter.github.io/2020/08/13/lnmp-wordpress/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -691,9 +696,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/08/13/lnmp-wordpress/">
                     <div class="card-image">
@@ -711,9 +717,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -722,6 +728,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -732,20 +739,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/13/firewalld-iptables/">
+                <a href="/2020/08/13/ssh/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="firewalld&amp;iptables">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ssh">
                         
-                        <span class="card-title">firewalld&amp;iptables</span>
+                        <span class="card-title">ssh</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            firewall常用参数[root@centos7 ~]# firewall-cmd –zone=public –add-port=80/tcp –permanent查询端口号80 是否开启：
-[root@centos7 ~]# firew
+                            操作系统的root账户拥有系统全部权限，如果允许使用root账户进行远程连接，一旦黑客利用该账户进行暴力破解成功，后果将不堪设想，因此，出于安全性的考虑，平台后台操作系统要禁止使用root账户远程连接。另外，由于22端口是公开的大家都知道的
                         
                     </div>
                     <div class="publish-info">
