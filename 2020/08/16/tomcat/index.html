@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="centos&amp;lnmp, Hexo">
+    <meta name="keywords" content="tomcat, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>centos&amp;lnmp | Hexo</title>
+    <title>tomcat | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">centos&amp;lnmp</h1>
+                    <h1 class="description center-align post-title">tomcat</h1>
                 </div>
             </div>
         </div>
@@ -458,39 +458,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="如何在centos中安装lnmp"><a href="#如何在centos中安装lnmp" class="headerlink" title="如何在centos中安装lnmp"></a>如何在centos中安装lnmp</h1><h2 id="先提前安装所需要的配件"><a href="#先提前安装所需要的配件" class="headerlink" title="先提前安装所需要的配件"></a>先提前安装所需要的配件</h2><p>安装make yum install gcc automake autoconf libtool make</p>
-<p>安装g++：yum install gcc gcc-c++</p>
-<p><img src="https://s1.ax1x.com/2020/08/16/dVNRFP.png"></p>
-<h2 id="下载nginx及组件（tar-gz）"><a href="#下载nginx及组件（tar-gz）" class="headerlink" title="下载nginx及组件（tar.gz）"></a>下载nginx及组件（tar.gz）</h2><p>选定下载文件目录<br>可以选择任何目录，我选择： /usr/local/src</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> cd &#x2F;usr&#x2F;local&#x2F;src</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<p>1、Nginx（下载: <a target="_blank" rel="noopener" href="http://nginx.org/en/download.html%EF%BC%89">http://nginx.org/en/download.html）</a><br>下载模块依赖性Nginx需要依赖下面3个包<br>2、gzip 模块需要 zlib 库 ( 下载: <a target="_blank" rel="noopener" href="http://www.zlib.net/">http://www.zlib.net/</a> )<br>3、rewrite 模块需要 pcre 库 ( 下载: <a target="_blank" rel="noopener" href="http://www.pcre.org/">http://www.pcre.org/</a> 或者 <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a>)<br>4、ssl 功能需要 openssl 库 ( 下载: <a target="_blank" rel="noopener" href="http://www.openssl.org/">http://www.openssl.org/</a> )</p>
-<p>下载命令：<br>（1）下载nginx：<code>wget http://nginx.org/download/nginx-1.10.3.tar.gz</code><br>（2）下载pcre：<code>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz</code><br>（3）下载openssl：<code>wget http://www.openssl.org/source/openssl-fips-2.0.16.tar.gz</code></p>
-<p><img src="https://s1.ax1x.com/2020/08/16/dVwquF.png"></p>
-<p>每次安装都返回 <code>/etc/local/src</code> ，即返回一下目录 <code>cd ..</code><br>nginx 一定要最后安装。</p>
-<p>（1）安装openssl：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf openssl-fips-2.0.16.tar.gz</span><br><span class="line"></span><br><span class="line">cd openssl-fips-2.0.16</span><br><span class="line">（可以分开输入，也可以中间加 &amp;&amp; 一次都运行）</span><br><span class="line">.&#x2F;config &amp;&amp; make &amp;&amp; make install   进入文件执行安装程序</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>（2）安装pcre</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf pcre-8.40.tar.gz</span><br><span class="line"></span><br><span class="line">cd pcre-8.40</span><br><span class="line"></span><br><span class="line">.&#x2F;configure &amp;&amp; make &amp;&amp; make install</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>（3）安装nginx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf nginx-1.10.3.tar.gz</span><br><span class="line"></span><br><span class="line">cd nginx-1.10.3</span><br><span class="line"></span><br><span class="line">.&#x2F;configure &amp;&amp; make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/08/16/dVBVLF.png"></p>
-<p>安装完成后会生成一个 nginx 文件夹，接下来启动 nginx。<br>（1）查看nginx安装的地址（whereis）<br>查找 <code>whereis nginx</code><br><img src="https://s1.ax1x.com/2020/08/16/dVBcwQ.png" alt="在这里插入图片描述"><br>（2）进入目录启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">进入目录：cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;  </span><br><span class="line">可以依次查看目录</span><br><span class="line">启动：&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
-
-<p>这个时候可能会报错，不要慌张！！！<br>错误信息：error while loading shared libraries:libpcre.so.1…<br>whereis libpcre.so.1<br><a target="_blank" rel="noopener" href="http://libpcre.so/">libpcre.so</a>: /lib64/libpcre.so.0 /usr/local/lib/libpcre.so.1 /usr/local/lib/libpcre.so<br>解决方案，建立软连接： <code>ln -s /usr/local/lib/libpcre.so.1 /lib64</code></p>
-<p>启动成功没有提示，可以查看一下：<code>ps -aux | grep nginx</code></p>
-<p><img src="https://s1.ax1x.com/2020/08/16/dVBcwQ.png"></p>
-<p>重新启动一下！</p>
-<p><img src="https://s1.ax1x.com/2020/08/16/dVDaBF.png"></p>
-<p>输入IP，即可看到 welcome to nginx!（如果<code>ps -aux | grep nginx</code>有信息，而IP访问不到，需要关闭防火墙，或者开启80端口）<br>配置防火墙，开放80端口：<code>firewall-cmd --zone= --add-port=80/tcp --permanent</code><br>重启防火墙：<code>firewall-cmd --reload</code></p>
-<p><img src="https://s1.ax1x.com/2020/08/16/dVD4Nd.png"></p>
-
+                
             </div>
             <hr/>
 
@@ -515,7 +483,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KiLeter.github.io/2020/08/16/centos-lnmp/">https://KiLeter.github.io/2020/08/16/centos-lnmp/</a>
+                    <a href="https://KiLeter.github.io/2020/08/16/tomcat/">https://KiLeter.github.io/2020/08/16/tomcat/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -718,9 +686,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/08/16/tomcat/">
                     <div class="card-image">
@@ -738,9 +707,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -749,6 +718,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -759,24 +729,27 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/13/lnmp-wordpress/">
+                <a href="/2020/08/16/centos-lnmp/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="lnmp&amp;wordpress">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="centos&amp;lnmp">
                         
-                        <span class="card-title">lnmp&amp;wordpress</span>
+                        <span class="card-title">centos&amp;lnmp</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            直接上脚本：[root@192 ~]# wget http://soft.vpser.net/lnmp/lnmp1.7.tar.gz -cO lnmp1.7.tar.gz &amp;&amp; tar zxf lnmp1.7.tar.gz 
+                            如何在centos中安装lnmp先提前安装所需要的配件安装make yum install gcc automake autoconf libtool make
+安装g++：yum install gcc gcc-c++
+
+下载nginx及
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
                             </span>
                         <span class="publish-author">
                             
