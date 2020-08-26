@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="8.21, Hexo">
+    <meta name="keywords" content="html, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>8.21 | Hexo</title>
+    <title>html | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">8.21</h1>
+                    <h1 class="description center-align post-title">html</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-18
+                    2020-08-25
                 </div>
                 
 
@@ -458,63 +458,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1。搭建三个虚拟机，一nginx转发，一个iptables转发，一个web服务器"><a href="#1。搭建三个虚拟机，一nginx转发，一个iptables转发，一个web服务器" class="headerlink" title="1。搭建三个虚拟机，一nginx转发，一个iptables转发，一个web服务器"></a>1。搭建三个虚拟机，一nginx转发，一个iptables转发，一个web服务器</h3><p>要求，访问iptables服务器80能访问到nginx反向代理的web服务器，且仅有80能够访问。而web服务器需要搭建phpcms+sqlilabs+dvwa+wordpress，每个网站在目录下文件夹命名。</p>
-<p>搭建shadowsocks服务器</p>
-<h3 id><a href="#" class="headerlink" title></a></h3><h5 id="-1"><a href="#-1" class="headerlink" title></a><!--配置sqli-labs操作步骤--></h5><p>这里我们去github上下载源码，</p>
-<p><strong><em>git clone <a target="_blank" rel="noopener" href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></em></strong></p>
-<p><img src="https://s1.ax1x.com/2020/08/20/dGsqwF.gif"></p>
-<p><em>并且配置数据库密码为：123456</em></p>
-<p><em>然后重新访问我们本机地址，可以看到访问成功！</em></p>
-<p><img src="https://s1.ax1x.com/2020/08/20/dGryE4.gif"></p>
-<h5 id="-2"><a href="#-2" class="headerlink" title></a><!--配置phpcms--></h5><p>下载phpcms包，unzip进行解压，我们再把文件夹用户组更改为：apache组并且将phpcms文件更改为：755权限。</p>
-<p><img src="https://s1.ax1x.com/2020/08/20/dGT6aR.gif"></p>
-<h4 id="-3"><a href="#-3" class="headerlink" title></a><!--setenforce是Linux的baiselinux防火墙配置命令， 执行setenforce 0 表示关闭duselinux防火墙。--></h4><p><img src="https://s1.ax1x.com/2020/08/20/dGHNcT.png"></p>
-<h6 id="setenforce命令是单词set（设置）和zhienforce-执行-连写，另一个dao命令getenforce可查看selinux的状态。"><a href="#setenforce命令是单词set（设置）和zhienforce-执行-连写，另一个dao命令getenforce可查看selinux的状态。" class="headerlink" title="setenforce命令是单词set（设置）和zhienforce(执行)连写，另一个dao命令getenforce可查看selinux的状态。"></a>setenforce命令是单词set（设置）和zhienforce(执行)连写，另一个dao命令getenforce可查看selinux的状态。</h6><h6 id="enforce：加强，这里指的是security-enforce安全加强，也就是SELinux，setenforce-0就是表示关闭SELinux。"><a href="#enforce：加强，这里指的是security-enforce安全加强，也就是SELinux，setenforce-0就是表示关闭SELinux。" class="headerlink" title="enforce：加强，这里指的是security enforce安全加强，也就是SELinux，setenforce 0就是表示关闭SELinux。"></a>enforce：加强，这里指的是security enforce安全加强，也就是SELinux，setenforce 0就是表示关闭SELinux。</h6><p>SELinux是一种安全子系统bai<br>它能控制程序只能du访问特定文件</p>
-<h6 id="-4"><a href="#-4" class="headerlink" title></a><!--访问我们的服务器地址，可以看到我们刚刚下载的phpcms后台安装文件--></h6><p><img src="https://s1.ax1x.com/2020/08/20/dGbzLD.gif"></p>
-<p><img src="https://s1.ax1x.com/2020/08/20/dGq0YR.gif"></p>
-<p><em><!--搭建dvwa--></em></p>
-<p>先去github上下载dvwa包</p>
-<h4 id="git-clone-https-github-com-digininja-DVWA-git"><a href="#git-clone-https-github-com-digininja-DVWA-git" class="headerlink" title="# git clone https://github.com/digininja/DVWA.git"></a># git clone <a target="_blank" rel="noopener" href="https://github.com/digininja/DVWA.git">https://github.com/digininja/DVWA.git</a></h4><p>我们直接把用户组改为apache：chown -R apache.apache dvwa/</p>
-<p>先备份，然后去数据库创建一个dvwa，用户名为dvwa，密码为：123456 </p>
-<p>#cd DVWA/ 进入文件夹<br>其中README.md是官方的帮助文档，里面有很官方的搭建过程<br>#cd config/ 进入config/下修改一下配置文件<br>使用cp命令保存原来文件，并复制一个文件改名为config.inc.php<br>#cp config.inc.php.dist config.inc.php</p>
-<h6 id="mysql-uroot-p"><a href="#mysql-uroot-p" class="headerlink" title="# mysql -uroot -p"></a># mysql -uroot -p</h6><h6 id="Enter-password"><a href="#Enter-password" class="headerlink" title="Enter password:"></a>Enter password:</h6><h6 id="MariaDB-none-gt-create-database-dvwa"><a href="#MariaDB-none-gt-create-database-dvwa" class="headerlink" title="MariaDB [(none)]&gt; create database dvwa;"></a>MariaDB [(none)]&gt; create database dvwa;</h6><h6 id="MariaDB-none-gt-grant-all-on-dvwa-todvwa-localhost-identified-by-‘123456’"><a href="#MariaDB-none-gt-grant-all-on-dvwa-todvwa-localhost-identified-by-‘123456’" class="headerlink" title="MariaDB [(none)]&gt; grant all on dvwa.* todvwa@localhost identified by ‘123456’;"></a>MariaDB [(none)]&gt; grant all on dvwa.* todvwa@localhost identified by ‘123456’;</h6><h6 id="MariaDB-none-gt-flush-privileges"><a href="#MariaDB-none-gt-flush-privileges" class="headerlink" title="MariaDB [(none)]&gt; flush privileges;"></a>MariaDB [(none)]&gt; flush privileges;</h6><h6 id="MariaDB-none-gt-exit"><a href="#MariaDB-none-gt-exit" class="headerlink" title="MariaDB [(none)]&gt; exit"></a>MariaDB [(none)]&gt; exit</h6><h6 id="此时重启一下mysql服务：systemctl-restart-mariadb"><a href="#此时重启一下mysql服务：systemctl-restart-mariadb" class="headerlink" title="此时重启一下mysql服务：systemctl restart mariadb"></a>此时重启一下mysql服务：systemctl restart mariadb</h6><p><img src="https://s1.ax1x.com/2020/08/20/dJEkQS.gif"></p>
-<!--修改一下DVWA的配置文件-->
-
-<h6 id="vim-config-inc-php"><a href="#vim-config-inc-php" class="headerlink" title="#vim config.inc.php"></a>#vim config.inc.php</h6><h6 id="DVWA-‘db-server’-‘localhost’"><a href="#DVWA-‘db-server’-‘localhost’" class="headerlink" title="$_DVWA[‘db_server’ ]?? = ‘localhost’;"></a>$_DVWA[‘db_server’ ]?? = ‘localhost’;</h6><h6 id="DVWA-‘db-database’-‘dvwa’"><a href="#DVWA-‘db-database’-‘dvwa’" class="headerlink" title="$_DVWA[‘db_database’ ] = ‘dvwa’;"></a>$_DVWA[‘db_database’ ] = ‘dvwa’;</h6><h6 id="DVWA-‘db-user’-‘dvwa’"><a href="#DVWA-‘db-user’-‘dvwa’" class="headerlink" title="$_DVWA[ ‘db_user’]???? = ‘dvwa’;"></a>$_DVWA[ ‘db_user’]???? = ‘dvwa’;</h6><h6 id="DVWA-‘db-password’-‘123456’-这里是在数据库里面设置的密码"><a href="#DVWA-‘db-password’-‘123456’-这里是在数据库里面设置的密码" class="headerlink" title="$_DVWA[‘db_password’ ] = ‘123456’; ? //这里是在数据库里面设置的密码"></a>$_DVWA[‘db_password’ ] = ‘123456’; ? //这里是在数据库里面设置的密码</h6><!--然后设置key：-->
-
-<h6 id="DVWA-‘recaptcha-public-key’-’6LdK7xITAAzzAAJQTfL7fu6I-0aPl8KHHieAT-yJg’"><a href="#DVWA-‘recaptcha-public-key’-’6LdK7xITAAzzAAJQTfL7fu6I-0aPl8KHHieAT-yJg’" class="headerlink" title="$_DVWA[ ‘recaptcha_public_key’ ]? =’6LdK7xITAAzzAAJQTfL7fu6I-0aPl8KHHieAT_yJg’;"></a>$_DVWA[ ‘recaptcha_public_key’ ]? =’6LdK7xITAAzzAAJQTfL7fu6I-0aPl8KHHieAT_yJg’;</h6><h6 id="DVWA-‘recaptcha-private-key’-’6LdK7xITAzzAAL-uw9YXVUOPoIHPZLfw2K1n5NVQ’"><a href="#DVWA-‘recaptcha-private-key’-’6LdK7xITAzzAAL-uw9YXVUOPoIHPZLfw2K1n5NVQ’" class="headerlink" title="$_DVWA[ ‘recaptcha_private_key’ ] =’6LdK7xITAzzAAL_uw9YXVUOPoIHPZLfw2K1n5NVQ’;"></a>$_DVWA[ ‘recaptcha_private_key’ ] =’6LdK7xITAzzAAL_uw9YXVUOPoIHPZLfw2K1n5NVQ’;</h6><p><img src="https://s1.ax1x.com/2020/08/20/dJVLHH.gif"></p>
-<!--修改一下php.ini这个文件-->
-<p>#vim /etc/php.ini<br>直接搜索 allow_url_include = Off //搜索到这个之后把Off 改为On</p>
-<p><img src="https://s1.ax1x.com/2020/08/20/dJmFts.gif"></p>
-<p>#systemctl restart mariadb //重启数据库<br>#systemctl restart httpd //重启apache<br>#systemctl stop firewalld //关闭防火墙<br>#setenforce 0 //关闭selinux</p>
-<p>最后去浏览器测试一下,用户名是admin,密码是password</p>
-<p><img src="https://s1.ax1x.com/2020/08/20/dJm6jf.gif"></p>
-<p><img src="https://s1.ax1x.com/2020/08/20/dJuuFJ.gif"></p>
-<p><em><!--wordpress--></em></p>
-<p>github上获取源码</p>
-<h6 id="git-clone-https-github-com-WordPress-WordPress-git"><a href="#git-clone-https-github-com-WordPress-WordPress-git" class="headerlink" title="git clone https://github.com/WordPress/WordPress.git"></a>git clone <a target="_blank" rel="noopener" href="https://github.com/WordPress/WordPress.git">https://github.com/WordPress/WordPress.git</a></h6><p><img src="https://s1.ax1x.com/2020/08/20/dJKICd.gif"></p>
-<p>权限给apache，并且将Wordpress文件夹暂时改为777，然后去数据库创建wordpress，并创建用户以及密码。重启httpd服务</p>
-<p><img src="https://s1.ax1x.com/2020/08/21/dYCHU0.gif"></p>
-<p>访问地址并一步步安装，正确填写数据库密码即可。</p>
-<p><img src="https://s1.ax1x.com/2020/08/21/dYiLX4.png"></p>
-<!--shadowsocks服务器-->
-
-<p>安装shadowsocks所需要的包：</p>
-<p>参考链接：<a target="_blank" rel="noopener" href="https://www.29kr.com/?p=159">12138</a></p>
-<p>参考链接：<a target="_blank" rel="noopener" href="https://www.pianshen.com/article/3317151983/">12139</a></p>
-<h5 id="yum-install-python-setuptools-amp-amp-easy-install-pip-pip-install-shadowsocks"><a href="#yum-install-python-setuptools-amp-amp-easy-install-pip-pip-install-shadowsocks" class="headerlink" title="yum install python-setuptools &amp;&amp; easy_install pip pip install shadowsocks"></a>yum install python-setuptools &amp;&amp; easy_install pip pip install shadowsocks</h5><p><img src="https://s1.ax1x.com/2020/08/21/dYFStx.gif"></p>
-<h5 id="3-python2-7-5升级到3-6-4"><a href="#3-python2-7-5升级到3-6-4" class="headerlink" title="3.python2.7.5升级到3.6.4"></a>3.python2.7.5升级到3.6.4</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc* openssl openssl-devel ncurses-devel.x86_64  bzip2-devel sqlite-devel  zlib python-devel mysql-devel openldap-devel</span><br><span class="line">wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz</span><br><span class="line">tar -xvf Python-3.6.4.tar.xz</span><br><span class="line">cd Python-3.6.4</span><br><span class="line">mkdir -p /usr/local/python3</span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make altinstall</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/08/21/dYkYse.gif"></p>
-<p><img src="https://s1.ax1x.com/2020/08/21/dYAmSf.png"></p>
-<p><img src="https://s1.ax1x.com/2020/08/21/dYAKOg.png"></p>
-<p>启动</p>
-<!--iptables-->
-
-<p>服务器：192.168.1.104：80</p>
-<p>kali：192.168.1.8</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING -p tcp -m tcp --dport 80 -j DNAT --to-destination  192.168.1.104:80</span><br><span class="line"></span><br><span class="line">iptables -t nat -A POSTROUTING -p tcp -d 192.168.1.104 --dport 80 -j SNAT --to-source 192.168.1.8</span><br></pre></td></tr></table></figure>
-
+                <p><img src="https://s1.ax1x.com/2020/08/26/dWzwFI.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/26/dfSe9P.png"></p>
 
             </div>
             <hr/>
@@ -540,7 +485,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KiLeter.github.io/2020/08/18/8-21/">https://KiLeter.github.io/2020/08/18/8-21/</a>
+                    <a href="https://KiLeter.github.io/2020/08/25/html/">https://KiLeter.github.io/2020/08/25/html/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -747,13 +692,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/25/html/">
+                <a href="/2020/08/25/html/2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="html">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">html</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -761,7 +706,18 @@
                         
                             
 
-
+	
+		
+		12138
+		
+        
+body
+h1
+{
+	color:orange;
+	text-align:center;
+}
+   body {background-image:url('3.jpg');}      
                         
                     </div>
                     <div class="publish-info">
@@ -786,27 +742,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/16/centos-lnmp/">
+                <a href="/2020/08/18/8-21/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="centos&amp;nginx">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="8.21">
                         
-                        <span class="card-title">centos&amp;nginx</span>
+                        <span class="card-title">8.21</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何在centos中安装nginx先提前安装所需要的依赖包安装g++：yum install gcc gcc-c++
-
-下载nginx及组件（tar.gz）选定下载文件目录可以选择任何目录，我选择： /usr/local/
-12cd &#x
+                            1。搭建三个虚拟机，一nginx转发，一个iptables转发，一个web服务器要求，访问iptables服务器80能访问到nginx反向代理的web服务器，且仅有80能够访问。而web服务器需要搭建phpcms+sqlilabs+dvwa
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-18
                             </span>
                         <span class="publish-author">
                             
